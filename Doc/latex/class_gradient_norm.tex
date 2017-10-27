@@ -1,0 +1,46 @@
+\hypertarget{class_gradient_norm}{}\section{Gradient\+Norm Class Reference}
+\label{class_gradient_norm}\index{Gradient\+Norm@{Gradient\+Norm}}
+
+
+{\ttfamily \#include $<$Stop\+Criterion.\+h$>$}
+
+
+
+Inherits \hyperlink{class_stop_criterion}{Stop\+Criterion}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool const \hyperlink{class_gradient_norm_a145df51258f31400dbf26bfd3b34a10b}{Stop\+Check} (\hyperlink{class_function}{Function} \&f, vector$<$ double $>$ const \&x, int iter) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_gradient_norm}{Gradient\+Norm} class derives from the \hyperlink{class_stop_criterion}{Stop\+Criterion} class and represents Gradient norm Criterion\+: (norm(gradient)$>$=eps) 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gradient_norm_a145df51258f31400dbf26bfd3b34a10b}\label{class_gradient_norm_a145df51258f31400dbf26bfd3b34a10b}} 
+\index{Gradient\+Norm@{Gradient\+Norm}!Stop\+Check@{Stop\+Check}}
+\index{Stop\+Check@{Stop\+Check}!Gradient\+Norm@{Gradient\+Norm}}
+\subsubsection{\texorpdfstring{Stop\+Check()}{StopCheck()}}
+{\footnotesize\ttfamily bool const Gradient\+Norm\+::\+Stop\+Check (\begin{DoxyParamCaption}\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{vector$<$ double $>$ const \&}]{x,  }\item[{int}]{iter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Abstract method for checking if \hyperlink{class_gradient_norm}{Gradient\+Norm} criterion is true or false 
+\begin{DoxyParams}{Parameters}
+{\em f} & \hyperlink{class_function}{Function} \\
+\hline
+{\em x} & Vector \\
+\hline
+{\em iter} & Number of iterations \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_stop_criterion_a9478e74e48a725ed151328488d709129}{Stop\+Criterion}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Optimiz1/\hyperlink{_stop_criterion_8h}{Stop\+Criterion.\+h}\item 
+C\+:/\+Optimiz1/\hyperlink{_stop_criterion_8cpp}{Stop\+Criterion.\+cpp}\end{DoxyCompactItemize}

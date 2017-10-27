@@ -1,0 +1,93 @@
+\hypertarget{_function_8cpp}{}\section{C\+:/\+Optimiz1/\+Function.cpp File Reference}
+\label{_function_8cpp}\index{C\+:/\+Optimiz1/\+Function.\+cpp@{C\+:/\+Optimiz1/\+Function.\+cpp}}
+{\ttfamily \#include \char`\"{}Function.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ double $>$ \hyperlink{_function_8cpp_a05ab8c17d07aef0b5c10550a028b563f}{operator+} (vector$<$ double $>$ const \&x, vector$<$ double $>$ const \&y)
+\item 
+vector$<$ double $>$ \hyperlink{_function_8cpp_a22b6097cd533334d1f39264479bd5447}{operator-\/} (vector$<$ double $>$ const \&x, vector$<$ double $>$ const \&y)
+\item 
+vector$<$ double $>$ \hyperlink{_function_8cpp_ab1a2eaacfb92894b757013ff0c5a339b}{operator$\ast$} (vector$<$ double $>$ const \&x, const double c)
+\item 
+double \hyperlink{_function_8cpp_a735efccbb7bd970b9374f4b8ccd1f5ca}{norm} (vector$<$ double $>$ const \&x)
+\item 
+double \hyperlink{_function_8cpp_a99e4bd41334243c4af24c1a8d67081c9}{scalpr} (std\+::vector$<$ double $>$ const \&x, std\+::vector$<$ double $>$ const \&y)
+\item 
+void \hyperlink{_function_8cpp_ae652a1572d46d9218ad92e518ce76da8}{vprint} (vector$<$ double $>$ x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_function_8cpp_a735efccbb7bd970b9374f4b8ccd1f5ca}\label{_function_8cpp_a735efccbb7bd970b9374f4b8ccd1f5ca}} 
+\index{Function.\+cpp@{Function.\+cpp}!norm@{norm}}
+\index{norm@{norm}!Function.\+cpp@{Function.\+cpp}}
+\subsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily double norm (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ const \&}]{x }\end{DoxyParamCaption})}
+
+Returns the norm of vector 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of double \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_function_8cpp_ab1a2eaacfb92894b757013ff0c5a339b}\label{_function_8cpp_ab1a2eaacfb92894b757013ff0c5a339b}} 
+\index{Function.\+cpp@{Function.\+cpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Function.\+cpp@{Function.\+cpp}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily vector$<$double$>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ const \&}]{x,  }\item[{const double}]{c }\end{DoxyParamCaption})}
+
+Operator$\ast$ for const and std\+::vector$<$double$>$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of double \\
+\hline
+{\em c} & const \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+c$\ast$x 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_function_8cpp_a05ab8c17d07aef0b5c10550a028b563f}\label{_function_8cpp_a05ab8c17d07aef0b5c10550a028b563f}} 
+\index{Function.\+cpp@{Function.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!Function.\+cpp@{Function.\+cpp}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily vector$<$double$>$ operator+ (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ const \&}]{x,  }\item[{vector$<$ double $>$ const \&}]{y }\end{DoxyParamCaption})}
+
+Operator+ for std\+::vector$<$double$>$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of double \\
+\hline
+{\em y} & Vector of double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+x+y 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_function_8cpp_a22b6097cd533334d1f39264479bd5447}\label{_function_8cpp_a22b6097cd533334d1f39264479bd5447}} 
+\index{Function.\+cpp@{Function.\+cpp}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Function.\+cpp@{Function.\+cpp}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily vector$<$double$>$ operator-\/ (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ const \&}]{x,  }\item[{vector$<$ double $>$ const \&}]{y }\end{DoxyParamCaption})}
+
+Operator-\/ for std\+::vector$<$double$>$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector of double \\
+\hline
+{\em y} & Vector of double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+x-\/y 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_function_8cpp_a99e4bd41334243c4af24c1a8d67081c9}\label{_function_8cpp_a99e4bd41334243c4af24c1a8d67081c9}} 
+\index{Function.\+cpp@{Function.\+cpp}!scalpr@{scalpr}}
+\index{scalpr@{scalpr}!Function.\+cpp@{Function.\+cpp}}
+\subsubsection{\texorpdfstring{scalpr()}{scalpr()}}
+{\footnotesize\ttfamily double scalpr (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ const \&}]{x,  }\item[{std\+::vector$<$ double $>$ const \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_function_8cpp_ae652a1572d46d9218ad92e518ce76da8}\label{_function_8cpp_ae652a1572d46d9218ad92e518ce76da8}} 
+\index{Function.\+cpp@{Function.\+cpp}!vprint@{vprint}}
+\index{vprint@{vprint}!Function.\+cpp@{Function.\+cpp}}
+\subsubsection{\texorpdfstring{vprint()}{vprint()}}
+{\footnotesize\ttfamily void vprint (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x }\end{DoxyParamCaption})}
+
+Void for printing vector 

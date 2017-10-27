@@ -1,0 +1,97 @@
+\hypertarget{class_random_search}{}\section{Random\+Search Class Reference}
+\label{class_random_search}\index{Random\+Search@{Random\+Search}}
+
+
+{\ttfamily \#include $<$Optimization.\+h$>$}
+
+
+
+Inherits \hyperlink{class_optimization}{Optimization}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_random_search_a4af34d282c84acd5346f66d9cd6db882}{Random\+Search} ()=default
+\item 
+\hyperlink{class_random_search_a3158fb489b681187d450c5297b90ce84}{Random\+Search} (double prob)
+\item 
+const char $\ast$ \hyperlink{class_random_search_ae7fa0aba388b4fb39aa2aa4808575d1b}{name} () const override
+\item 
+vector$<$ double $>$ \hyperlink{class_random_search_a6eb6deac6e0b053f4c8ecc58bb3ca109}{Rand\+In\+Area} (\hyperlink{class_area}{Area} \&D)
+\item 
+vector$<$ double $>$ \hyperlink{class_random_search_a411b0ec16c09bfa51879f88bbb98692e}{minimize} (\hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&area, \hyperlink{class_stop_criterion}{Stop\+Criterion} \&crit1, \hyperlink{class_stop_criterion}{Stop\+Criterion} \&crit2, vector$<$ double $>$ x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_random_search}{Random\+Search} class is for searching for global minimum using Random Search Method 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_random_search_a4af34d282c84acd5346f66d9cd6db882}\label{class_random_search_a4af34d282c84acd5346f66d9cd6db882}} 
+\index{Random\+Search@{Random\+Search}!Random\+Search@{Random\+Search}}
+\index{Random\+Search@{Random\+Search}!Random\+Search@{Random\+Search}}
+\subsubsection{\texorpdfstring{Random\+Search()}{RandomSearch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Random\+Search\+::\+Random\+Search (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Default constructor \mbox{\Hypertarget{class_random_search_a3158fb489b681187d450c5297b90ce84}\label{class_random_search_a3158fb489b681187d450c5297b90ce84}} 
+\index{Random\+Search@{Random\+Search}!Random\+Search@{Random\+Search}}
+\index{Random\+Search@{Random\+Search}!Random\+Search@{Random\+Search}}
+\subsubsection{\texorpdfstring{Random\+Search()}{RandomSearch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Random\+Search\+::\+Random\+Search (\begin{DoxyParamCaption}\item[{double}]{prob }\end{DoxyParamCaption})}
+
+Constructor that sets the probability for Random Search Method 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_random_search_a411b0ec16c09bfa51879f88bbb98692e}\label{class_random_search_a411b0ec16c09bfa51879f88bbb98692e}} 
+\index{Random\+Search@{Random\+Search}!minimize@{minimize}}
+\index{minimize@{minimize}!Random\+Search@{Random\+Search}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Random\+Search\+::minimize (\begin{DoxyParamCaption}\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{area,  }\item[{\hyperlink{class_stop_criterion}{Stop\+Criterion} \&}]{crit1,  }\item[{\hyperlink{class_stop_criterion}{Stop\+Criterion} \&}]{crit2,  }\item[{vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract method for searching for a global minimum of the function using Random Search 
+\begin{DoxyParams}{Parameters}
+{\em f} & \hyperlink{class_function}{Function} \\
+\hline
+{\em area} & \hyperlink{class_area}{Area} \\
+\hline
+{\em crit1} & Stop Criterion 1 \\
+\hline
+{\em crit2} & Stop Criterion 2 \\
+\hline
+{\em x} & Vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Argmin of the function 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_optimization_a48d9f3c2014da553156c4adf17f935d7}{Optimization}.
+
+\mbox{\Hypertarget{class_random_search_ae7fa0aba388b4fb39aa2aa4808575d1b}\label{class_random_search_ae7fa0aba388b4fb39aa2aa4808575d1b}} 
+\index{Random\+Search@{Random\+Search}!name@{name}}
+\index{name@{name}!Random\+Search@{Random\+Search}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const char $\ast$ Random\+Search\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the method name 
+
+Implements \hyperlink{class_optimization_a75a9fc5b451bbe5dd3eae14a12e5fbae}{Optimization}.
+
+\mbox{\Hypertarget{class_random_search_a6eb6deac6e0b053f4c8ecc58bb3ca109}\label{class_random_search_a6eb6deac6e0b053f4c8ecc58bb3ca109}} 
+\index{Random\+Search@{Random\+Search}!Rand\+In\+Area@{Rand\+In\+Area}}
+\index{Rand\+In\+Area@{Rand\+In\+Area}!Random\+Search@{Random\+Search}}
+\subsubsection{\texorpdfstring{Rand\+In\+Area()}{RandInArea()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Random\+Search\+::\+Rand\+In\+Area (\begin{DoxyParamCaption}\item[{\hyperlink{class_area}{Area} \&}]{D }\end{DoxyParamCaption})}
+
+Method for getting a random point in the area 
+\begin{DoxyParams}{Parameters}
+{\em D} & \hyperlink{class_area}{Area} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Optimiz1/\hyperlink{_optimization_8h}{Optimization.\+h}\item 
+C\+:/\+Optimiz1/\hyperlink{_optimization_8cpp}{Optimization.\+cpp}\end{DoxyCompactItemize}

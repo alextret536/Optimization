@@ -1,0 +1,54 @@
+\hypertarget{class_stop_criterion}{}\section{Stop\+Criterion Class Reference}
+\label{class_stop_criterion}\index{Stop\+Criterion@{Stop\+Criterion}}
+
+
+{\ttfamily \#include $<$Stop\+Criterion.\+h$>$}
+
+
+
+Inherited by \hyperlink{class_gradient_norm}{Gradient\+Norm}, and \hyperlink{class_number_of_iterations}{Number\+Of\+Iterations}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const bool \hyperlink{class_stop_criterion_a9478e74e48a725ed151328488d709129}{Stop\+Check} (\hyperlink{class_function}{Function} \&f, vector$<$ double $>$ const \&x, int iter) const =0
+\item 
+virtual \hyperlink{class_stop_criterion_a009452a691d0e944d384125c40bae021}{$\sim$\+Stop\+Criterion} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_stop_criterion_a009452a691d0e944d384125c40bae021}\label{class_stop_criterion_a009452a691d0e944d384125c40bae021}} 
+\index{Stop\+Criterion@{Stop\+Criterion}!````~Stop\+Criterion@{$\sim$\+Stop\+Criterion}}
+\index{````~Stop\+Criterion@{$\sim$\+Stop\+Criterion}!Stop\+Criterion@{Stop\+Criterion}}
+\subsubsection{\texorpdfstring{$\sim$\+Stop\+Criterion()}{~StopCriterion()}}
+{\footnotesize\ttfamily Stop\+Criterion\+::$\sim$\+Stop\+Criterion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stop_criterion_a9478e74e48a725ed151328488d709129}\label{class_stop_criterion_a9478e74e48a725ed151328488d709129}} 
+\index{Stop\+Criterion@{Stop\+Criterion}!Stop\+Check@{Stop\+Check}}
+\index{Stop\+Check@{Stop\+Check}!Stop\+Criterion@{Stop\+Criterion}}
+\subsubsection{\texorpdfstring{Stop\+Check()}{StopCheck()}}
+{\footnotesize\ttfamily virtual const bool Stop\+Criterion\+::\+Stop\+Check (\begin{DoxyParamCaption}\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{vector$<$ double $>$ const \&}]{x,  }\item[{int}]{iter }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method for checking if criterion is true or false 
+\begin{DoxyParams}{Parameters}
+{\em f} & \hyperlink{class_function}{Function} \\
+\hline
+{\em x} & Vector \\
+\hline
+{\em iter} & Number of iterations \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_gradient_norm_a145df51258f31400dbf26bfd3b34a10b}{Gradient\+Norm}, and \hyperlink{class_number_of_iterations_a15003e19b5a35092fd4d068d06d41659}{Number\+Of\+Iterations}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Optimiz1/\hyperlink{_stop_criterion_8h}{Stop\+Criterion.\+h}\item 
+C\+:/\+Optimiz1/\hyperlink{_stop_criterion_8cpp}{Stop\+Criterion.\+cpp}\end{DoxyCompactItemize}

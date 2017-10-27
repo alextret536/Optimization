@@ -1,0 +1,76 @@
+\hypertarget{class_optimization}{}\section{Optimization Class Reference}
+\label{class_optimization}\index{Optimization@{Optimization}}
+
+
+{\ttfamily \#include $<$Optimization.\+h$>$}
+
+
+
+Inherited by \hyperlink{class_polak_ribiere}{Polak\+Ribiere}, and \hyperlink{class_random_search}{Random\+Search}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual vector$<$ double $>$ \hyperlink{class_optimization_a48d9f3c2014da553156c4adf17f935d7}{minimize} (\hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&area, \hyperlink{class_stop_criterion}{Stop\+Criterion} \&crit1, \hyperlink{class_stop_criterion}{Stop\+Criterion} \&crit2, vector$<$ double $>$ x)=0
+\item 
+virtual const char $\ast$ \hyperlink{class_optimization_a75a9fc5b451bbe5dd3eae14a12e5fbae}{name} () const =0
+\item 
+virtual \hyperlink{class_optimization_ab31ce5bff6ce62836b5cdb346cf5a36a}{$\sim$\+Optimization} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_optimization_ab31ce5bff6ce62836b5cdb346cf5a36a}\label{class_optimization_ab31ce5bff6ce62836b5cdb346cf5a36a}} 
+\index{Optimization@{Optimization}!````~Optimization@{$\sim$\+Optimization}}
+\index{````~Optimization@{$\sim$\+Optimization}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{$\sim$\+Optimization()}{~Optimization()}}
+{\footnotesize\ttfamily Optimization\+::$\sim$\+Optimization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_optimization_a48d9f3c2014da553156c4adf17f935d7}\label{class_optimization_a48d9f3c2014da553156c4adf17f935d7}} 
+\index{Optimization@{Optimization}!minimize@{minimize}}
+\index{minimize@{minimize}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily virtual vector$<$double$>$ Optimization\+::minimize (\begin{DoxyParamCaption}\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{area,  }\item[{\hyperlink{class_stop_criterion}{Stop\+Criterion} \&}]{crit1,  }\item[{\hyperlink{class_stop_criterion}{Stop\+Criterion} \&}]{crit2,  }\item[{vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Abstract method for searching for a minimum 
+\begin{DoxyParams}{Parameters}
+{\em f} & \hyperlink{class_function}{Function} \\
+\hline
+{\em area} & \hyperlink{class_area}{Area} \\
+\hline
+{\em crit1} & Stop Criterion 1 \\
+\hline
+{\em crit2} & Stop Criterion 2 \\
+\hline
+{\em x} & Vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Argmin of the function 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_random_search_a411b0ec16c09bfa51879f88bbb98692e}{Random\+Search}, and \hyperlink{class_polak_ribiere_ac35468cd175f30fdeae7cb023f0dadf7}{Polak\+Ribiere}.
+
+\mbox{\Hypertarget{class_optimization_a75a9fc5b451bbe5dd3eae14a12e5fbae}\label{class_optimization_a75a9fc5b451bbe5dd3eae14a12e5fbae}} 
+\index{Optimization@{Optimization}!name@{name}}
+\index{name@{name}!Optimization@{Optimization}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily virtual const char$\ast$ Optimization\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Returns the method name \begin{DoxyReturn}{Returns}
+const char$\ast$ string with the method name 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_random_search_ae7fa0aba388b4fb39aa2aa4808575d1b}{Random\+Search}, and \hyperlink{class_polak_ribiere_a2a69c824b56e097a012d32c97ab021fd}{Polak\+Ribiere}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Optimiz1/\hyperlink{_optimization_8h}{Optimization.\+h}\item 
+C\+:/\+Optimiz1/\hyperlink{_optimization_8cpp}{Optimization.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{class_polak_ribiere}{}\section{Polak\+Ribiere Class Reference}
+\label{class_polak_ribiere}\index{Polak\+Ribiere@{Polak\+Ribiere}}
+
+
+{\ttfamily \#include $<$Optimization.\+h$>$}
+
+
+
+Inherits \hyperlink{class_optimization}{Optimization}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{class_polak_ribiere_a2a69c824b56e097a012d32c97ab021fd}{name} () const override
+\item 
+double \hyperlink{class_polak_ribiere_ad73be8a4a015c7c53f729b738d490ed6}{right\+\_\+value} (vector$<$ double $>$ x, vector$<$ double $>$ l, vector$<$ double $>$ r, vector$<$ double $>$ p)
+\item 
+double \hyperlink{class_polak_ribiere_a712890f0e14a88f0cb64ce2e11be3b05}{argmin} (vector$<$ double $>$ const \&x, vector$<$ double $>$ const \&p, \hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&area)
+\item 
+vector$<$ double $>$ \hyperlink{class_polak_ribiere_ac35468cd175f30fdeae7cb023f0dadf7}{minimize} (\hyperlink{class_function}{Function} \&f, \hyperlink{class_area}{Area} \&area, \hyperlink{class_stop_criterion}{Stop\+Criterion} \&crit1, \hyperlink{class_stop_criterion}{Stop\+Criterion} \&crit2, vector$<$ double $>$ x)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_polak_ribiere}{Polak\+Ribiere} class is for searching for local minimum using Polak-\/\+Ribiere Method 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_polak_ribiere_a712890f0e14a88f0cb64ce2e11be3b05}\label{class_polak_ribiere_a712890f0e14a88f0cb64ce2e11be3b05}} 
+\index{Polak\+Ribiere@{Polak\+Ribiere}!argmin@{argmin}}
+\index{argmin@{argmin}!Polak\+Ribiere@{Polak\+Ribiere}}
+\subsubsection{\texorpdfstring{argmin()}{argmin()}}
+{\footnotesize\ttfamily double Polak\+Ribiere\+::argmin (\begin{DoxyParamCaption}\item[{vector$<$ double $>$ const \&}]{x,  }\item[{vector$<$ double $>$ const \&}]{p,  }\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{area }\end{DoxyParamCaption})}
+
+Method for searching for argmin f(x\+\_\+k + alpha\+\_\+k $\ast$ p\+\_\+k) using Dichotomy Method 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector \\
+\hline
+{\em p} & Vector \\
+\hline
+{\em f} & \hyperlink{class_function}{Function} \\
+\hline
+{\em area} & \hyperlink{class_area}{Area} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Argmin of the function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_polak_ribiere_ac35468cd175f30fdeae7cb023f0dadf7}\label{class_polak_ribiere_ac35468cd175f30fdeae7cb023f0dadf7}} 
+\index{Polak\+Ribiere@{Polak\+Ribiere}!minimize@{minimize}}
+\index{minimize@{minimize}!Polak\+Ribiere@{Polak\+Ribiere}}
+\subsubsection{\texorpdfstring{minimize()}{minimize()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Polak\+Ribiere\+::minimize (\begin{DoxyParamCaption}\item[{\hyperlink{class_function}{Function} \&}]{f,  }\item[{\hyperlink{class_area}{Area} \&}]{area,  }\item[{\hyperlink{class_stop_criterion}{Stop\+Criterion} \&}]{crit1,  }\item[{\hyperlink{class_stop_criterion}{Stop\+Criterion} \&}]{crit2,  }\item[{vector$<$ double $>$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Abstract method for searching for a local minimum of the function using Polak-\/\+Ribiere Method 
+\begin{DoxyParams}{Parameters}
+{\em f} & \hyperlink{class_function}{Function} \\
+\hline
+{\em area} & \hyperlink{class_area}{Area} \\
+\hline
+{\em crit1} & Stop Criterion 1 \\
+\hline
+{\em crit2} & Stop Criterion 2 \\
+\hline
+{\em x} & Vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Argmin of the function 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_optimization_a48d9f3c2014da553156c4adf17f935d7}{Optimization}.
+
+\mbox{\Hypertarget{class_polak_ribiere_a2a69c824b56e097a012d32c97ab021fd}\label{class_polak_ribiere_a2a69c824b56e097a012d32c97ab021fd}} 
+\index{Polak\+Ribiere@{Polak\+Ribiere}!name@{name}}
+\index{name@{name}!Polak\+Ribiere@{Polak\+Ribiere}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const char $\ast$ Polak\+Ribiere\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Returns the method name 
+
+Implements \hyperlink{class_optimization_a75a9fc5b451bbe5dd3eae14a12e5fbae}{Optimization}.
+
+\mbox{\Hypertarget{class_polak_ribiere_ad73be8a4a015c7c53f729b738d490ed6}\label{class_polak_ribiere_ad73be8a4a015c7c53f729b738d490ed6}} 
+\index{Polak\+Ribiere@{Polak\+Ribiere}!right\+\_\+value@{right\+\_\+value}}
+\index{right\+\_\+value@{right\+\_\+value}!Polak\+Ribiere@{Polak\+Ribiere}}
+\subsubsection{\texorpdfstring{right\+\_\+value()}{right\_value()}}
+{\footnotesize\ttfamily double Polak\+Ribiere\+::right\+\_\+value (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{x,  }\item[{vector$<$ double $>$}]{l,  }\item[{vector$<$ double $>$}]{r,  }\item[{vector$<$ double $>$}]{p }\end{DoxyParamCaption})}
+
+Method for searching for a right bound of alpha 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vector \\
+\hline
+{\em l} & Left bound of area \\
+\hline
+{\em r} & Right bound of area \\
+\hline
+{\em p} & Vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Right bound for alpha 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Optimiz1/\hyperlink{_optimization_8h}{Optimization.\+h}\item 
+C\+:/\+Optimiz1/\hyperlink{_optimization_8cpp}{Optimization.\+cpp}\end{DoxyCompactItemize}
