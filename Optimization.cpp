@@ -18,12 +18,11 @@ double PolakRibiere::right_value(vector<double> x, vector<double> l, vector<doub
 	}
 	return bord;
 };
-double PolakRibiere::argmin(vector<double> const& x, vector<double> const& p, Function& f, Area& area) {
-	double l = 0, r = right_value(x, area.GetL(), area.GetR(), p);
+double PolakRibiere::argmin(vector<double> const& x, vector<double> const& p, Function* f, Area* area, Constant& par) {
+	double l = 0, r = right_value(x, area->GetL(), area->GetR(), p);
 	double m = (l + r) / 2;
-	//while (abs((r - l)) > eps) {
-	while (abs(f.df(x + p*m, p)) >= eps) {
-		if (f.df(x + p*m, p) > 0)
+	while (abs(f->df(x + p*m, p,par)) >= par.GetEps()) {
+		if (f->df(x + p*m, p,par) > 0)
 			r = m;
 		else l = m;
 		m = (l + r) / 2;
@@ -32,24 +31,22 @@ double PolakRibiere::argmin(vector<double> const& x, vector<double> const& p, Fu
 
 	return m;
 };
-vector<double> PolakRibiere:: minimize(Function& f, Area& area, StopCriterion& crit1, StopCriterion& crit2, vector<double> x) {
+vector<double> PolakRibiere:: minimize(Function* f, Area* area, StopCriterion* crit1,  vector<double> x, Constant& par) {
 	double beta = 0; double alpha = 1;
-	vector<double> oldGrad(f.gradient(x));
+	vector<double> oldGrad(f->gradient(x,par));
 	vector<double> newGrad(x.size());
 	vector<double> p(oldGrad*(-1));
 	int k = 1;
-	while (crit1.StopCheck(f, x, k) && crit2.StopCheck(f, x, k)) {
-		alpha = argmin(x, p, f, area);
-		//cout << "alpha=  " << alpha << endl;
+	while (crit1->StopCheck(f, x, k,k,par)) {
+		alpha = argmin(x, p, f, area, par);
 		x = x + p*alpha;
-		newGrad = f.gradient(x);
-		//cout << "norm grad  =  " << norm(newGrad) << endl;
+		newGrad = f->gradient(x,par);
 		beta = scalpr(newGrad, newGrad - oldGrad) / scalpr(oldGrad, oldGrad);
 		p = newGrad*(-1) + p*beta;
 		oldGrad = newGrad;
 		k++;
+		++iter;
 	}
-	//cout << norm(newGrad) << endl;
 	return x;
 };
 
@@ -58,54 +55,55 @@ RandomSearch::RandomSearch(double prob) : p(prob) {
 	std::mt19937 mt(rd());
 	std::uniform_real_distribution<> d(0, 1);
 	u = d;
+	iter = 0;
 }
 
 const char* RandomSearch::name() const { return "Random Search Method"; };
-vector<double> RandomSearch::RandInArea(Area& D) {
-	int dim = D.GetL().size();
+vector<double> RandomSearch::RandInArea(Area* D) {
+	int dim = D->GetL().size();
 	vector<double> res;
 	for (int k = 0; k < dim; ++k) {
-		res.push_back(D.GetL()[k] + (D.GetR()[k] - D.GetL()[k])*u(mt_rand));
+		res.push_back(D->GetL()[k] + (D->GetR()[k] - D->GetL()[k])*u(mt_rand));
 	}
 	return res;
 }
-vector<double>RandomSearch::minimize(Function& f, Area& area, StopCriterion& crit1, StopCriterion& crit2, vector<double> x) {
-	int count = 0; int iter = 0;
-	double ksi; double eps1 = eps; 
-	std::vector<double> xi(area.GetL().size());
-	std::vector<double> yi(area.GetL().size());
-	std::vector<double> br(area.GetL().size());
-	std::vector<double> bl(area.GetL().size());
+vector<double>RandomSearch::minimize(Function* f, Area* area, StopCriterion* crit1, vector<double> x, Constant& par) {
+	int count = 0; 
+	double ksi; double eps1 = par.GetEps(); 
+	std::vector<double> xi(area->GetL().size());
+	std::vector<double> yi(area->GetL().size());
+	std::vector<double> br(area->GetL().size());
+	std::vector<double> bl(area->GetL().size());
 	yi = RandInArea(area);
-	for (int i = 0; count<STOP_RAND; i++) {
+	//for (int i = 0; count<STOP_RAND; i++) {
+	for (int i = 0; crit1->StopCheck(f,yi,iter,count,par); i++) {
+		++iter;
 		ksi = u(mt_rand);
 		if (ksi <= p) {
 			xi = RandInArea(area);
 		}
 		else {
-			for (int k = 0; k < area.GetL().size(); k++) {
-				if (abs(area.GetR()[k] - yi[k]) > eps1) {
+			for (int k = 0; k < area->GetL().size(); k++) {
+				if (abs(area->GetR()[k] - yi[k]) > eps1) {
 					br[k] = yi[k] + eps1;
 				}
-				else br[k] = area.GetR()[k];
-				if (abs(area.GetL()[k] - yi[k]) > eps1) {
+				else br[k] = area->GetR()[k];
+				if (abs(area->GetL()[k] - yi[k]) > eps1) {
 					bl[k] = yi[k] - eps1;
 				}
-				else bl[k] = area.GetL()[k];
+				else bl[k] = area->GetL()[k];
 			}
-			for (int j = 0; j < area.GetL().size(); j++) {
-				uniform_real_distribution<double> u1(yi[j] - eps1, yi[j] + eps1);
-				xi[j] = u1(mt_rand);
-			}
+			Area NewRectangle(bl, br);
+			xi = RandInArea(&NewRectangle);
 			eps1 *= c;
 		}
-		if (f.f(yi) > f.f(xi)) {
+		if (f->f(yi) > f->f(xi)) {
 			yi = xi, count = 0;
 		}
 		else count++;
-		iter++;
 	}
 	return yi;
 }
 
+int Optimization::GetIter() const { return iter; };
 Optimization:: ~Optimization() {};
