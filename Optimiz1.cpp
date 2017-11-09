@@ -89,10 +89,17 @@ int main(){
 
 	cout << endl<<"Input vector x:" << endl;
 	vector<double> x(dim);
-	vread(x);
+//	vread(x);
+	try {
 		for (int i = 0; i < dim; ++i) {
-			if ((x[i] > Ar->GetR()[i]) || x[i] < Ar->GetL()[i]) { throw exception("Error: vector is not in the area"); return 1; }
+			cin >> x[i];
+			if ((x[i] > Ar->GetR()[i]) || x[i] < Ar->GetL()[i]) { throw exception("Vector is out of the area!"); }
 		}
+	}
+	catch (const exception& ex) {
+		std::cerr << "Error: " << ex.what() << std::endl;
+		return 1;
+	}
 
 		StopCriterion * St=0;
 		switch (Crit){
