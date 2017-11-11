@@ -23,7 +23,8 @@ public:
 	\param x Vector
 	\return Argmin of the function
 	*/
-	virtual vector<double> minimize(Function* f, Area* area, StopCriterion* crit1, vector<double> x, Constant& par) = 0;
+	virtual vector<double> minimize(Function* f, Area* area, 
+		StopCriterion* crit1, vector<double> x, Constant& par) = 0;
 	/*!
 	Returns the method name
 	\return const char* string with the method name
@@ -51,7 +52,8 @@ public:
 	\param p Vector
 	\return Right bound for alpha
 	*/
-	double right_value(vector<double> x, vector<double> l, vector<double> r, vector<double> p);
+	double right_value(vector<double> x, vector<double> l, 
+		vector<double> r, vector<double> p);
 	/*!
 	Method for searching for argmin f(x_k + alpha_k * p_k) using Dichotomy Method
 	\param x Vector
@@ -60,7 +62,8 @@ public:
 	\param area Area
 	\return Argmin of the function
 	*/
-	double argmin(vector<double> const& x, vector<double> const& p, Function* f, Area* area, Constant& par);
+	double argmin(vector<double> const& x, vector<double> const& p, 
+		Function* f, Area* area, Constant& par);
 	/*!
 	Abstract method for searching for a local minimum of the function using Polak-Ribiere Method
 	\param f Function
@@ -69,7 +72,8 @@ public:
 	\param x Vector
 	\return Argmin of the function
 	*/
-	vector<double> minimize(Function* f, Area* area, StopCriterion* crit1, vector<double> x, Constant& par);
+	vector<double> minimize(Function* f, Area* area, 
+		StopCriterion* crit1, vector<double> x, Constant& par);
 
 };
 
@@ -106,5 +110,6 @@ public:
 	\param x Vector
 	\return Argmin of the function
 	*/
-	vector<double> minimize(Function* f, Area* area, StopCriterion* crit1, vector<double> x, Constant& par);
+	vector<double> minimize(Function* f, Area* area, 
+		StopCriterion* crit1, vector<double> x, Constant& par);
 };

@@ -17,7 +17,8 @@ public:
 	\param x Vector
 	\param iter Number of iterations
 	*/
-	virtual const bool StopCheck(Function* f, vector<double> const& x, int iter, int iter_s, Constant& par) const = 0;
+	virtual const bool StopCheck(Function* f, vector<double> const& x, 
+		int iter, int iter_s, Constant& par) const = 0;
 	/*!
 	Destructor
 	*/
@@ -35,7 +36,8 @@ public:
 	\param x Vector
 	\param iter Number of iterations
 	*/
-	bool const StopCheck(Function* f, vector<double> const& x, int iter, int iter_s, Constant& par) const override;
+	bool const StopCheck(Function* f, vector<double> const& x, 
+		int iter, int iter_s, Constant& par) const override;
 };
 
 /*!
@@ -49,5 +51,6 @@ public:
 	\param x Vector
 	\param iter Number of iterations
 	*/
-	bool const StopCheck(Function* f, vector<double> const& x, int iter, int iter_s, Constant& par) const override;
+	bool const StopCheck(Function* f, vector<double> const& x,
+		int iter, int iter_s, Constant& par) const override;
 };

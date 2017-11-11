@@ -1,10 +1,12 @@
 #include "Function.h"
 
 double F1::f(vector<double>const& x) {
-	return ((x[1] - x[0] * x[0])*(x[1] - x[0] * x[0]) + 100 * (1 - x[0])*(1 - x[0]));
+	return ((x[1] - x[0] * x[0])*(x[1] - x[0] * x[0]) + 
+		100 * (1 - x[0])*(1 - x[0]));
 };
 double F2::f(vector<double>const& x) {
-	return 100 * (x[1] - x[0] * x[0])*(x[1] - x[0] * x[0]) + (1 - x[0])*(1 - x[0]);
+	return 100 * (x[1] - x[0] * x[0])*(x[1] - x[0] * x[0]) +
+		(1 - x[0])*(1 - x[0]);
 };
 double F3::f(vector<double>const& x) {
 	return x[0] * x[0] + x[1] * x[1] + x[2] * x[2] + x[3] * x[3];
@@ -26,7 +28,8 @@ vector<double> Function::gradient(vector<double> const& x, Constant& par) {
 
 double Function::df(vector<double> x, vector<double> p, Constant& par) {
 	double delta = par.GetDelta();
-	return((f(x + (p*(1 / norm(p)))* delta) - f(x + (p*(1 / norm(p)))* (-1)* delta)) / (2 * delta));
+	return((f(x + (p*(1 / norm(p)))* delta) - 
+		f(x + (p*(1 / norm(p)))* (-1)* delta)) / (2 * delta));
 }
 
 vector<double> operator+(vector<double> const& x, vector<double> const& y) {
@@ -60,7 +63,7 @@ double norm(vector<double> const& x) {
 	return accum;
 }
 
-double scalpr(std::vector<double> const& x, std::vector<double> const& y) {
+double scalpr(vector<double> const& x, vector<double> const& y) {
 	double prod = 0;
 	for (int i = 0; i < x.size(); i++) {
 		prod += x.at(i)*y.at(i);

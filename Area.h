@@ -43,7 +43,9 @@ public:
 	\param left Left bound
 	\param right Right bound
 	*/
-	Area1(vector<double> left = { -3,-3 }, vector<double> right = { 4,4 }) : Area(left, right) {};
+	Area1(vector<double> left = { -3,-3 }, 
+		vector<double> right = { 4,4 }) :
+		Area(left, right) {};
 };
 
 /*!
@@ -56,5 +58,7 @@ public:
 	\param left Left bound
 	\param right Right bound
 	*/
-	Area2(vector<double> left = { -3,-3,-3,-3 }, vector<double> right = { 4,4,4,4 }) : Area(left, right) {};
+	Area2(vector<double> left = { -3,-3,-3,-3 },
+		vector<double> right = { 4,4,4,4 }) :
+		Area(left, right) {};
 };

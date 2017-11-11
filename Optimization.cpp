@@ -6,8 +6,10 @@
 #include <time.h>
 using namespace std;
 
-const char* PolakRibiere:: name() const { return "Polak-Ribiere Method"; };
-double PolakRibiere::right_value(vector<double> x, vector<double> l, vector<double> r, vector<double> p) {
+const char* PolakRibiere:: name() const { 
+	return "Polak-Ribiere Method"; };
+double PolakRibiere::right_value(vector<double> x, 
+	vector<double> l, vector<double> r, vector<double> p) {
 	double bord, t;
 	if (p[0] > 0) bord = (r[0] - x[0]) / p[0];
 	else bord = (l[0] - x[0]) / p[0];
@@ -18,7 +20,8 @@ double PolakRibiere::right_value(vector<double> x, vector<double> l, vector<doub
 	}
 	return bord;
 };
-double PolakRibiere::argmin(vector<double> const& x, vector<double> const& p, Function* f, Area* area, Constant& par) {
+double PolakRibiere::argmin(vector<double> const& x,
+	vector<double> const& p, Function* f, Area* area, Constant& par) {
 	double l = 0, r = right_value(x, area->GetL(), area->GetR(), p);
 	double m = (l + r) / 2;
 	while (abs(f->df(x + p*m, p,par)) >= par.GetEps()) {
@@ -31,7 +34,8 @@ double PolakRibiere::argmin(vector<double> const& x, vector<double> const& p, Fu
 
 	return m;
 };
-vector<double> PolakRibiere:: minimize(Function* f, Area* area, StopCriterion* crit1,  vector<double> x, Constant& par) {
+vector<double> PolakRibiere:: minimize(Function* f, Area* area, 
+	StopCriterion* crit1,  vector<double> x, Constant& par) {
 	double beta = 0; double alpha = 1;
 	vector<double> oldGrad(f->gradient(x,par));
 	vector<double> newGrad(x.size());
@@ -41,7 +45,8 @@ vector<double> PolakRibiere:: minimize(Function* f, Area* area, StopCriterion* c
 		alpha = argmin(x, p, f, area, par);
 		x = x + p*alpha;
 		newGrad = f->gradient(x,par);
-		beta = scalpr(newGrad, newGrad - oldGrad) / scalpr(oldGrad, oldGrad);
+		beta = scalpr(newGrad, newGrad - oldGrad) / 
+			scalpr(oldGrad, oldGrad);
 		p = newGrad*(-1) + p*beta;
 		oldGrad = newGrad;
 		k++;
@@ -58,16 +63,18 @@ RandomSearch::RandomSearch(double prob) : p(prob) {
 	iter = 0;
 }
 
-const char* RandomSearch::name() const { return "Random Search Method"; };
+const char* RandomSearch::name() const { 
+	return "Random Search Method"; };
 vector<double> RandomSearch::RandInArea(Area* D) {
 	int dim = D->GetL().size();
 	vector<double> res;
 	for (int k = 0; k < dim; ++k) {
-		res.push_back(D->GetL()[k] + (D->GetR()[k] - D->GetL()[k])*u(mt_rand));
+	res.push_back(D->GetL()[k] + (D->GetR()[k] - D->GetL()[k])*u(mt_rand));
 	}
 	return res;
 }
-vector<double>RandomSearch::minimize(Function* f, Area* area, StopCriterion* crit1, vector<double> x, Constant& par) {
+vector<double>RandomSearch::minimize(Function* f, Area* area, 
+	StopCriterion* crit1, vector<double> x, Constant& par) {
 	int count = 0; 
 	double ksi; double eps1 = par.GetEps(); 
 	std::vector<double> xi(area->GetL().size());

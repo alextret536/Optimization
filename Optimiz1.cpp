@@ -56,7 +56,9 @@ int main(){
 	}
 	}
 
-	cout << "Please, choose optimization method: " <<endl << "1 - Polak-Ribiere Method"<<endl << "2 - Random Search Method" << endl;
+	cout << "Please, choose optimization method: " <<endl 
+		<< "1 - Polak-Ribiere Method"<<endl
+		<< "2 - Random Search Method" << endl;
 	int method;
 	double MethodNumber=0;
 	cin >> MethodNumber;
@@ -69,7 +71,9 @@ int main(){
 	}
 	method = MethodNumber;
 
-	cout << "Please, choose criterion: " << endl << "1 - ||Gragient||<eps" << endl << "2 - Number of success iterations" << endl;
+	cout << "Please, choose criterion: " << endl 
+		<< "1 - ||Gragient||<eps" << endl 
+		<< "2 - Number of success iterations" << endl;
 	int Crit;
 	double CritNumber=0;
 	cin >> CritNumber;
@@ -93,7 +97,8 @@ int main(){
 	try {
 		for (int i = 0; i < dim; ++i) {
 			cin >> x[i];
-			if ((x[i] > Ar->GetR()[i]) || x[i] < Ar->GetL()[i]) { throw exception("Vector is out of the area!"); }
+			if ((x[i] > Ar->GetR()[i]) || x[i] < Ar->GetL()[i]) {
+				throw exception("Vector is out of the area!"); }
 		}
 	}
 	catch (const exception& ex) {
