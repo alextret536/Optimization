@@ -9,6 +9,8 @@
 #include "Const.h"
 #include "StopCriterion.h"
 #include "Optimization.h"
+#include <exception>
+#include <stdexcept>
 using namespace std;
 
 int main(){
@@ -97,11 +99,11 @@ int main(){
 	try {
 		for (int i = 0; i < dim; ++i) {
 			cin >> x[i];
-			if ((x[i] > Ar->GetR()[i]) || x[i] < Ar->GetL()[i]) {
-				throw exception("Vector is out of the area!"); }
+			if ((x[i] > Ar->GetR()[i]) || x[i] < Ar->GetL()[i])
+				throw std::runtime_error("Vector is out of the area!");
 		}
 	}
-	catch (const exception& ex) {
+	catch (exception& ex) {
 		std::cerr << "Error: " << ex.what() << std::endl;
 		return 1;
 	}

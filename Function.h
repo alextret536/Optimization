@@ -50,32 +50,7 @@ public:
 	\param y Vector of double
 	\return x+y
 	*/
-	friend vector<double> operator+(vector<double> const& x, vector<double> const& y);
-	/*!
-	Operator- for std::vector<double>
-	\param x Vector of double
-	\param y Vector of double
-	\return x-y
-	*/
-	friend vector<double> operator-(vector<double> const& x, vector<double> const& y);
-	/*!
-	Operator* for const and std::vector<double>
-	\param x Vector of double
-	\param c const
-	\return c*x
-	*/
-	friend vector<double> operator*(vector<double> const& x, const double c);
-	/*!
-	Returns the norm of vector
-	\param x Vector of double
-	*/
-	friend double norm(vector<double> const& x);
-	/*!
-	Returns the scalar product of two vectors
-	\param x Vector of double
-	\param y Vector of double
-	*/
-	friend double scalpr(vector<double> const& x, vector<double> const& y);
+
 };
 
 /*!
@@ -121,3 +96,30 @@ Void for printing vector
 */
 void vprint(vector<double> x);
 void vread(vector<double>& x);
+
+vector<double> operator+(vector<double> const& x, vector<double> const& y);
+/*!
+Operator- for std::vector<double>
+\param x Vector of double
+\param y Vector of double
+\return x-y
+*/
+vector<double> operator-(vector<double> const& x, vector<double> const& y);
+/*!
+Operator* for const and std::vector<double>
+\param x Vector of double
+\param c const
+\return c*x
+*/
+vector<double> operator*(vector<double> const& x, const double c);
+/*!
+Returns the norm of vector
+\param x Vector of double
+*/
+ double norm(vector<double> const& x);
+/*!
+Returns the scalar product of two vectors
+\param x Vector of double
+\param y Vector of double
+*/
+double scalpr(vector<double> const& x, vector<double> const& y);
