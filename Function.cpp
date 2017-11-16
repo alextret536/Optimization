@@ -1,4 +1,5 @@
 #include "Function.h"
+#include<cmath>
 
 double F1::f(vector<double>const& x) {
 	return ((x[1] - x[0] * x[0])*(x[1] - x[0] * x[0]) + 
@@ -58,7 +59,7 @@ vector<double> operator*(vector<double> const& x, const double c) {
 double norm(vector<double> const& x) {
 	double accum = 0.;
 	for (int i = 0; i < x.size(); ++i) {
-		if (abs(x[i]) > accum) accum = abs(x[i]);
+		if (fabs(x[i]) > accum) accum = fabs(x[i]);
 	}
 	return accum;
 }
