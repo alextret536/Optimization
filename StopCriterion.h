@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STOPCRITERION_H
+#define STOPCRITERION_H
 #include "Const.h"
 #include "Function.h"
 #include<vector>
@@ -11,18 +12,18 @@ StopCriterion class for checking when method should stop
 */
 class StopCriterion {
 public:
-	/*!
-	Abstract method for checking if criterion is true or false
-	\param f Function
-	\param x Vector
-	\param iter Number of iterations
-	*/
-	virtual const bool StopCheck(Function* f, vector<double> const& x, 
-		int iter, int iter_s, Constant& par) const = 0;
-	/*!
-	Destructor
-	*/
-	virtual ~StopCriterion();
+    /*!
+    Abstract method for checking if criterion is true or false
+    \param f Function
+    \param x Vector
+    \param iter Number of iterations
+    */
+    virtual const bool StopCheck(Function* f, vector<double> const& x,
+        int iter, int iter_s, Constant& par) const = 0;
+    /*!
+    Destructor
+    */
+    virtual ~StopCriterion();
 };
 
 /*!
@@ -30,14 +31,14 @@ NumberOfIterations class derives from the StopCriterion class and represents Num
 */
 class NumberOfIterations : public StopCriterion {
 public:
-	/*!
-	Abstract method for checking if NumberOfIterations criterion is true or false
-	\param f Function
-	\param x Vector
-	\param iter Number of iterations
-	*/
-	bool const StopCheck(Function* f, vector<double> const& x, 
-		int iter, int iter_s, Constant& par) const override;
+    /*!
+    Abstract method for checking if NumberOfIterations criterion is true or false
+    \param f Function
+    \param x Vector
+    \param iter Number of iterations
+    */
+    bool const StopCheck(Function* f, vector<double> const& x,
+        int iter, int iter_s, Constant& par) const override;
 };
 
 /*!
@@ -45,12 +46,13 @@ GradientNorm class derives from the StopCriterion class and represents Gradient 
 */
 class GradientNorm : public StopCriterion {
 public:
-	/*!
-	Abstract method for checking if GradientNorm  criterion is true or false
-	\param f Function
-	\param x Vector
-	\param iter Number of iterations
-	*/
-	bool const StopCheck(Function* f, vector<double> const& x,
-		int iter, int iter_s, Constant& par) const override;
+    /*!
+    Abstract method for checking if GradientNorm  criterion is true or false
+    \param f Function
+    \param x Vector
+    \param iter Number of iterations
+    */
+    bool const StopCheck(Function* f, vector<double> const& x,
+        int iter, int iter_s, Constant& par) const override;
 };
+#endif // STOPCRITERION_H

@@ -1,9 +1,9 @@
 #include "Area.h"
 
 const vector<double> Area:: GetL() const {
-	return l;
+    return l;
 };
 const vector<double> Area:: GetR() const {
-	return r;
+    return r;
 };
 Area:: ~Area() {};
